@@ -330,6 +330,7 @@
   .floorplan{background:var(--ink);}
   .floorplan .section-head p{color:var(--steel);}
   .fp-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
+  .fp-grid-solo{grid-template-columns:1fr; max-width:640px; margin:0 auto;}
   .fp-photo{background:var(--paper); padding:14px; border-radius:4px;}
   .fp-photo img{border-radius:2px;}
   .fp-side{color:var(--paper);}
@@ -723,10 +724,7 @@
 <!-- FLOORPLAN -->
 <section class="floorplan" id="pelan">
   <div class="wrap">
-    <div class="fp-grid">
-      <div class="fp-photo">
-        <img src="floorplan-1.jpg" alt="Pelan lantai rumah banglo Tengku Azrin Construction">
-      </div>
+    <div class="fp-grid fp-grid-solo">
       <div class="fp-side">
         <div class="eyebrow-light" style="color:var(--brick);">Pelan Lantai</div>
         <h2 style="margin-top:18px; color:var(--paper);">Susun atur unit tipikal.</h2>
