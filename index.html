@@ -158,6 +158,18 @@
   .btn-outline{border:1px solid rgba(199,204,209,0.4); color:var(--paper);}
   .btn-outline:hover{border-color:var(--paper); background:rgba(255,255,255,0.06);}
   .hero-dim{max-width:640px;}
+  .cred-badge{
+    display:flex; width:fit-content; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(214,46,34,0.55);
+    color:var(--steel);
+    padding:9px 18px; border-radius:30px;
+    font-size:12.5px; font-weight:500; letter-spacing:0.02em;
+    margin-bottom:24px;
+    transition:background 0.2s, border-color 0.2s;
+  }
+  .cred-badge b{color:var(--brick);}
+  .cred-badge:hover{background:rgba(214,46,34,0.18); border-color:var(--brick);}
 
   /* ---------- Section basics ---------- */
   section{padding:100px 0;}
@@ -343,6 +355,30 @@
   .fp-legend span{font-size:12.5px; color:var(--steel); display:flex; align-items:center; gap:8px;}
   .fp-legend i{width:11px; height:11px; border-radius:2px; display:inline-block;}
 
+  /* ---------- Pengiktirafan ---------- */
+  .pengiktirafan{background:var(--ink);}
+  .pengiktirafan .section-head p{color:var(--steel);}
+  .cred-logos{display:flex; align-items:center; gap:16px; margin-top:26px; flex-wrap:wrap;}
+  .cred-logo-badge{
+    background:var(--paper); border-radius:6px;
+    padding:10px 18px; display:flex; align-items:center; justify-content:center;
+    height:56px;
+  }
+  .cred-logo-badge img{height:100%; width:auto; object-fit:contain;}
+  .cred-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start; margin-bottom:56px;}
+  .cred-photo{background:var(--paper); padding:14px; border-radius:4px;}
+  .cred-photo img{border-radius:2px;}
+  .cred-copy h3{color:var(--paper); font-size:1.3rem; margin-bottom:14px;}
+  .cred-copy p{color:var(--steel); font-size:15px; margin-bottom:20px;}
+  .cred-list{list-style:none; display:flex; flex-direction:column; gap:14px;}
+  .cred-list li{
+    color:var(--steel); font-size:14px; line-height:1.55;
+    padding-left:18px; border-left:2px solid var(--brick);
+  }
+  .cred-list b{color:var(--paper);}
+  .cred-subhead{color:var(--brick); font-size:1.05rem; margin-bottom:16px;}
+  .cred-gallery figcaption{font-size:10px;}
+
   /* ---------- CTA banner ---------- */
   .cta-band{
     background:var(--brick);
@@ -378,7 +414,7 @@
   @media (max-width: 900px){
     .nav-links{display:none;}
     .nav-toggle{display:block;}
-    .about-grid, .quality-grid, .fp-grid, .video-grid, .owner-grid{grid-template-columns:1fr; gap:36px;}
+    .about-grid, .quality-grid, .fp-grid, .video-grid, .owner-grid, .cred-grid{grid-template-columns:1fr; gap:36px;}
     .quality-grid{direction:rtl;}
     .quality-grid > *{direction:ltr;}
     .owner-card{max-width:220px;}
@@ -418,6 +454,7 @@
       <li><a href="#perkhidmatan">Perkhidmatan</a></li>
       <li><a href="#projek">Projek</a></li>
       <li><a href="#pelan">Pelan Lantai</a></li>
+      <li><a href="#pengiktirafan">Pengiktirafan</a></li>
     </ul>
     <a class="nav-cta" href="tel:+60129398963">📞 012-939 8963</a>
   </div>
@@ -427,6 +464,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Kontraktor Binaan — Kota Bharu, Kelantan</div>
+    <a class="cred-badge" href="#pengiktirafan">🏅 <b>Kontraktor Berdaftar JKR</b> — Sijil Penghargaan Kontraktor Cemerlang</a>
     <h1>Dari lakaran pelan, <span>kepada kunci</span> rumah anda.</h1>
     <p>Tengku Azrin Construction merancang, membina dan menyiapkan rumah banglo mengikut pelan yang diluluskan — bukan agakan di tapak. Satu kontraktor, dari reka bentuk sampai serah kunci.</p>
     <div class="btn-row">
@@ -746,6 +784,51 @@
   </div>
 </section>
 
+<!-- PENGIKTIRAFAN -->
+<section class="pengiktirafan" id="pengiktirafan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-light" style="color:var(--brick);">Pengiktirafan</div>
+      <h2 style="margin-top:18px; color:var(--paper);">Kontraktor berdaftar, diiktiraf kerajaan.</h2>
+      <p style="color:var(--steel);">Tengku Azrin Construction ialah kontraktor berdaftar yang telah menyiapkan projek kerajaan bersama Jabatan Kerja Raya (JKR) Negeri Terengganu, disahkan dengan Sijil Penghargaan Kontraktor Cemerlang.</p>
+      <div class="cred-logos">
+        <div class="cred-logo-badge"><img src="logo-jata-negara.png" alt="Kerajaan Malaysia"></div>
+        <div class="cred-logo-badge"><img src="logo-cidb.png" alt="CIDB Malaysia"></div>
+      </div>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-photo">
+        <img src="sijil-kontraktor-cemerlang.jpg" alt="Sijil Penghargaan Kontraktor Cemerlang daripada JKR Negeri Terengganu">
+      </div>
+      <div class="cred-copy">
+        <h3>Sijil Penghargaan Kontraktor Cemerlang</h3>
+        <p>Dianugerahkan oleh Jabatan Kerja Raya (JKR) Negeri Terengganu atas kejayaan menyiapkan projek kerajaan dengan mutu kerja yang cemerlang.</p>
+        <ul class="cred-list">
+          <li><b>Projek:</b> Kerja-kerja Senggara dan Baikpulih Fasiliti di Sekolah Kebangsaan Kg. Shukor, Dungun, Terengganu</li>
+          <li><b>Prestasi:</b> Disiapkan 152 hari lebih awal daripada tempoh kontrak yang ditetapkan</li>
+          <li><b>No. Pendaftaran Kontraktor:</b> KT0208117-X</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="cred-subhead">Gambar Tapak — Projek Sekolah Kebangsaan Kg. Shukor</h3>
+    <div class="gallery-grid cred-gallery">
+      <figure><img src="projek-sekolah-pintu-masuk.jpg" alt="Pintu masuk utama sekolah"><figcaption>Pintu Masuk Utama</figcaption></figure>
+      <figure><img src="projek-sekolah-papan-tanda.jpg" alt="Papan tanda sekolah"><figcaption>Papan Tanda Sekolah</figcaption></figure>
+      <figure><img src="projek-sekolah-blok-b.jpg" alt="Blok bangunan sekolah"><figcaption>Blok Bangunan</figcaption></figure>
+      <figure><img src="projek-sekolah-koridor.jpg" alt="Koridor kelas sekolah"><figcaption>Koridor Kelas</figcaption></figure>
+      <figure><img src="projek-sekolah-dewan.jpg" alt="Dewan dan kantin sekolah"><figcaption>Dewan / Kantin</figcaption></figure>
+      <figure><img src="projek-sekolah-kaunter.jpg" alt="Kaunter kantin sekolah"><figcaption>Kaunter Kantin</figcaption></figure>
+      <figure><img src="projek-sekolah-dapur1.jpg" alt="Dapur sekolah"><figcaption>Dapur</figcaption></figure>
+      <figure><img src="projek-sekolah-dapur2.jpg" alt="Ruang dapur sekolah"><figcaption>Ruang Dapur</figcaption></figure>
+      <figure><img src="projek-sekolah-blok-c.jpg" alt="Blok bangunan sekolah - luar"><figcaption>Blok Bangunan — Luar</figcaption></figure>
+      <figure><img src="projek-sekolah-sisi.jpg" alt="Sisi bangunan sekolah"><figcaption>Sisi Bangunan</figcaption></figure>
+      <figure><img src="projek-sekolah-asrama.jpg" alt="Blok dua tingkat sekolah"><figcaption>Blok Dua Tingkat</figcaption></figure>
+      <figure><img src="projek-sekolah-tandas.jpg" alt="Blok tandas sekolah"><figcaption>Blok Tandas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="wrap">
@@ -781,6 +864,7 @@
           <li><a href="#perkhidmatan">Perkhidmatan</a></li>
           <li><a href="#projek">Projek</a></li>
           <li><a href="#pelan">Pelan Lantai</a></li>
+          <li><a href="#pengiktirafan">Pengiktirafan</a></li>
         </ul>
       </div>
       <div>
