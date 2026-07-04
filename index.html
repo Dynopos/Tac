@@ -199,21 +199,23 @@
   .owner-card-wrap{perspective:1400px; display:flex; justify-content:center;}
   .owner-card{
     position:relative; max-width:300px;
-    transform:rotateY(-12deg) rotateX(3deg);
+    transform:rotateY(-22deg) rotateX(6deg) translateZ(0);
+    transform-style:preserve-3d;
     transition:transform 0.5s ease;
   }
-  .owner-card:hover{transform:rotateY(0deg) rotateX(0deg);}
+  .owner-card:hover{transform:rotateY(-6deg) rotateX(2deg);}
   .owner-card::before{
     content:'';
-    position:absolute; inset:16px -16px -16px 16px;
+    position:absolute; inset:22px -22px -22px 22px;
     background:var(--brick);
     border-radius:6px;
     z-index:-1;
+    transform:translateZ(-40px);
   }
   .owner-card img{
     width:100%; display:block; border-radius:6px;
     border:3px solid var(--ink);
-    box-shadow:0 34px 64px -20px rgba(0,0,0,0.65), 0 12px 24px rgba(0,0,0,0.4);
+    box-shadow:0 44px 80px -20px rgba(0,0,0,0.7), 0 16px 30px rgba(0,0,0,0.45);
   }
   .owner-copy .eyebrow-light{color:var(--brick);}
   .owner-copy h2{color:var(--paper); margin:18px 0 20px;}
@@ -378,8 +380,7 @@
     .about-grid, .quality-grid, .fp-grid, .video-grid, .owner-grid{grid-template-columns:1fr; gap:36px;}
     .quality-grid{direction:rtl;}
     .quality-grid > *{direction:ltr;}
-    .owner-card{max-width:220px; transform:none;}
-    .owner-card:hover{transform:none;}
+    .owner-card{max-width:220px;}
     .stats-row{grid-template-columns:1fr 1fr; row-gap:28px;}
     .stat-item:nth-child(2){border-right:none;}
     .stat-item:nth-child(1),.stat-item:nth-child(3){border-right:1px solid rgba(199,204,209,0.15);}
