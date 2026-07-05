@@ -91,17 +91,20 @@
   .brand img{width:44px; height:44px; border-radius:8px; object-fit:cover;}
   .brand-text{color:var(--paper); font-family:'Oswald',sans-serif; font-size:15px; letter-spacing:0.03em;}
   .brand-text b{color:var(--brick); display:block; font-size:16px;}
-  .owner-avatar{
-    width:44px; height:44px; border-radius:50%;
-    object-fit:cover;
-    border:2px solid var(--brick);
-  }
   .nav-links{display:flex; gap:28px; list-style:none;}
   .nav-links a{
     color:var(--steel); font-size:13px; text-transform:uppercase;
     letter-spacing:0.08em; font-weight:500; transition:color 0.2s;
   }
   .nav-links a:hover{color:var(--paper);}
+  .nav-actions{display:flex; align-items:center; gap:10px;}
+  .social-icon{
+    width:38px; height:38px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--steel); border:1px solid rgba(199,204,209,0.25);
+    transition:all 0.2s; flex-shrink:0;
+  }
+  .social-icon:hover{color:#fff; background:var(--brick); border-color:var(--brick);}
   .nav-cta{
     display:flex; align-items:center; gap:8px;
     background:var(--brick); color:#fff !important;
@@ -117,7 +120,7 @@
     position:relative;
     min-height:100vh;
     display:flex; align-items:flex-end;
-    background:url('exterior-finished1.jpg') center 65%/cover no-repeat;
+    background:url('assets/exterior-finished1.jpg') center 65%/cover no-repeat;
   }
   .hero::before{
     content:'';
@@ -158,18 +161,6 @@
   .btn-outline{border:1px solid rgba(199,204,209,0.4); color:var(--paper);}
   .btn-outline:hover{border-color:var(--paper); background:rgba(255,255,255,0.06);}
   .hero-dim{max-width:640px;}
-  .cred-badge{
-    display:flex; width:fit-content; align-items:center; gap:8px;
-    background:rgba(255,255,255,0.08);
-    border:1px solid rgba(214,46,34,0.55);
-    color:var(--steel);
-    padding:9px 18px; border-radius:30px;
-    font-size:12.5px; font-weight:500; letter-spacing:0.02em;
-    margin-bottom:24px;
-    transition:background 0.2s, border-color 0.2s;
-  }
-  .cred-badge b{color:var(--brick);}
-  .cred-badge:hover{background:rgba(214,46,34,0.18); border-color:var(--brick);}
 
   /* ---------- Section basics ---------- */
   section{padding:100px 0;}
@@ -203,40 +194,6 @@
     font-family:'JetBrains Mono',monospace; font-size:12px;
     letter-spacing:0.06em; max-width:220px;
     border-left:3px solid var(--brick);
-  }
-
-  /* ---------- Owner spotlight ---------- */
-  .owner-spotlight{background:var(--ink-2); color:var(--paper); overflow:hidden;}
-  .owner-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:72px; align-items:center;}
-  .owner-card-wrap{perspective:1400px; display:flex; justify-content:center;}
-  .owner-card{
-    position:relative; max-width:300px;
-    transform:rotateY(-22deg) rotateX(6deg) translateZ(0);
-    transform-style:preserve-3d;
-    transition:transform 0.5s ease;
-  }
-  .owner-card:hover{transform:rotateY(-6deg) rotateX(2deg);}
-  .owner-card::before{
-    content:'';
-    position:absolute; inset:22px -22px -22px 22px;
-    background:var(--brick);
-    border-radius:6px;
-    z-index:-1;
-    transform:translateZ(-40px);
-  }
-  .owner-card img{
-    width:100%; display:block; border-radius:6px;
-    border:3px solid var(--ink);
-    box-shadow:0 44px 80px -20px rgba(0,0,0,0.7), 0 16px 30px rgba(0,0,0,0.45);
-  }
-  .owner-copy .eyebrow-light{color:var(--brick);}
-  .owner-copy h2{color:var(--paper); margin:18px 0 20px;}
-  .owner-copy p{color:var(--steel); font-size:15.5px; margin-bottom:16px;}
-  .owner-tag{
-    display:inline-flex; align-items:center; gap:10px;
-    margin-top:10px;
-    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.08em;
-    color:var(--brick); text-transform:uppercase;
   }
 
   /* ---------- Stats strip ---------- */
@@ -277,6 +234,19 @@
 
   /* ---------- Video Tapak ---------- */
   .video-section{background:var(--paper);}
+  .promo-embed{
+    position:relative; width:100%; padding-top:56.25%;
+    background:var(--ink); border-radius:4px; overflow:hidden;
+    border:1px solid rgba(140,133,121,0.3);
+  }
+  .promo-embed iframe{
+    position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+  }
+  .drive-fallback{
+    display:inline-block; margin-top:14px; font-size:13px;
+    color:var(--concrete); text-decoration:underline; text-underline-offset:3px;
+  }
+  .drive-fallback:hover{color:var(--brick-deep);}
   .video-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   .video-card{background:var(--ink); border-radius:4px; overflow:hidden; border:1px solid rgba(140,133,121,0.3);}
   .video-card video{width:100%; display:block; aspect-ratio:16/9; background:#000;}
@@ -338,19 +308,10 @@
   .g-tall{grid-row:span 2;}
   .g-wide{grid-column:span 2;}
 
-  .cred-tag{
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em;
-    color:#fff; background:var(--brick);
-    padding:5px 12px; border-radius:3px;
-    margin-bottom:18px;
-  }
-
   /* ---------- Floorplan ---------- */
   .floorplan{background:var(--ink);}
   .floorplan .section-head p{color:var(--steel);}
   .fp-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:start;}
-  .fp-grid-solo{grid-template-columns:1fr; max-width:640px; margin:0 auto;}
   .fp-photo{background:var(--paper); padding:14px; border-radius:4px;}
   .fp-photo img{border-radius:2px;}
   .fp-side{color:var(--paper);}
@@ -362,30 +323,6 @@
   .fp-legend{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:6px;}
   .fp-legend span{font-size:12.5px; color:var(--steel); display:flex; align-items:center; gap:8px;}
   .fp-legend i{width:11px; height:11px; border-radius:2px; display:inline-block;}
-
-  /* ---------- Pengiktirafan ---------- */
-  .pengiktirafan{background:var(--ink);}
-  .pengiktirafan .section-head p{color:var(--steel);}
-  .cred-logos{display:flex; align-items:center; gap:16px; margin-top:26px; flex-wrap:wrap;}
-  .cred-logo-badge{
-    background:var(--paper); border-radius:6px;
-    padding:10px 18px; display:flex; align-items:center; justify-content:center;
-    height:56px;
-  }
-  .cred-logo-badge img{height:100%; width:auto; object-fit:contain;}
-  .cred-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:start; margin-bottom:56px;}
-  .cred-photo{background:var(--paper); padding:14px; border-radius:4px;}
-  .cred-photo img{border-radius:2px;}
-  .cred-copy h3{color:var(--paper); font-size:1.3rem; margin-bottom:14px;}
-  .cred-copy p{color:var(--steel); font-size:15px; margin-bottom:20px;}
-  .cred-list{list-style:none; display:flex; flex-direction:column; gap:14px;}
-  .cred-list li{
-    color:var(--steel); font-size:14px; line-height:1.55;
-    padding-left:18px; border-left:2px solid var(--brick);
-  }
-  .cred-list b{color:var(--paper);}
-  .cred-subhead{color:var(--brick); font-size:1.05rem; margin-bottom:16px;}
-  .cred-gallery figcaption{font-size:10px;}
 
   /* ---------- CTA banner ---------- */
   .cta-band{
@@ -400,7 +337,33 @@
   .cta-inner .btn-dark{background:var(--ink); color:#fff;}
   .cta-inner .btn-dark:hover{background:#000;}
 
+  /* ---------- Ikuti Kami ---------- */
+  .social-section{background:var(--paper-2);}
+  .social-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .social-card{
+    background:var(--ink); color:var(--paper);
+    border-radius:4px; padding:32px;
+    display:flex; flex-direction:column; gap:16px;
+    border:1px solid rgba(140,133,121,0.3);
+    transition:transform 0.2s, border-color 0.2s;
+  }
+  .social-card:hover{transform:translateY(-4px); border-color:var(--brick);}
+  .social-card-icon{
+    width:52px; height:52px; border-radius:50%;
+    background:rgba(214,46,34,0.12); color:var(--brick);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .social-card-body h4{font-size:1.2rem; margin-bottom:8px;}
+  .social-card-body p{color:var(--steel); font-size:14px;}
+  .social-card-cta{
+    font-family:'JetBrains Mono',monospace; font-size:12.5px;
+    color:var(--brick); letter-spacing:0.04em; margin-top:auto;
+  }
+
   /* ---------- Footer ---------- */
+  .footer-social{display:flex; gap:10px; margin-top:18px;}
+  footer .social-icon{color:var(--steel); border-color:rgba(199,204,209,0.2);}
+  footer .social-icon:hover{color:#fff; background:var(--brick); border-color:var(--brick);}
   footer{background:var(--ink); color:var(--steel); padding:64px 0 26px;}
   .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px; margin-bottom:48px;}
   .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
@@ -422,10 +385,9 @@
   @media (max-width: 900px){
     .nav-links{display:none;}
     .nav-toggle{display:block;}
-    .about-grid, .quality-grid, .fp-grid, .video-grid, .owner-grid, .cred-grid{grid-template-columns:1fr; gap:36px;}
+    .about-grid, .quality-grid, .fp-grid, .video-grid{grid-template-columns:1fr; gap:36px;}
     .quality-grid{direction:rtl;}
     .quality-grid > *{direction:ltr;}
-    .owner-card{max-width:220px;}
     .stats-row{grid-template-columns:1fr 1fr; row-gap:28px;}
     .stat-item:nth-child(2){border-right:none;}
     .stat-item:nth-child(1),.stat-item:nth-child(3){border-right:1px solid rgba(199,204,209,0.15);}
@@ -436,6 +398,8 @@
     .g-wide{grid-column:span 2;}
     .footer-grid{grid-template-columns:1fr; gap:32px;}
     .about-photo .tag{position:static; margin-top:16px; max-width:none;}
+    .social-grid{grid-template-columns:1fr;}
+    .nav-actions .social-icon{display:none;}
   }
   @media (max-width: 560px){
     section{padding:64px 0;}
@@ -453,18 +417,25 @@
 <header>
   <div class="nav">
     <div class="brand">
-      <img src="logo-mark-tight.jpg" alt="Logo Tengku Azrin Construction">
+      <img src="assets/logo-mark-tight.jpg" alt="Logo Tengku Azrin Construction">
       <div class="brand-text">TENGKU AZRIN<b>CONSTRUCTION</b></div>
-      <img class="owner-avatar" src="owner-photo.jpg" alt="Tengku Azrin, Pemilik Tengku Azrin Construction">
+    </div>
     <ul class="nav-links">
       <li><a href="#tentang">Tentang</a></li>
       <li><a href="#proses">Proses</a></li>
       <li><a href="#perkhidmatan">Perkhidmatan</a></li>
       <li><a href="#projek">Projek</a></li>
       <li><a href="#pelan">Pelan Lantai</a></li>
-      <li><a href="#pengiktirafan">Pengiktirafan</a></li>
     </ul>
-    <a class="nav-cta" href="tel:+60129398963">📞 012-939 8963</a>
+    <div class="nav-actions">
+      <a class="social-icon" href="https://www.facebook.com/share/1NS5e6WVr5/" target="_blank" rel="noopener" aria-label="Facebook Tengku Azrin Construction">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13.5 21v-8.2h2.75l.4-3.2h-3.15V7.4c0-.93.26-1.56 1.6-1.56h1.7V2.98C16.5 2.94 15.4 2.85 14.14 2.85c-2.6 0-4.38 1.59-4.38 4.5v2.25H7v3.2h2.76V21h3.74z"/></svg>
+      </a>
+      <a class="social-icon" href="https://www.tiktok.com/@tengkuazrinmaju?_r=1&_t=ZS-97m1skmtxyO" target="_blank" rel="noopener" aria-label="TikTok Tengku Azrin Construction">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.6 5.82c-.9-.78-1.45-1.9-1.45-3.15h-3.02v13.36c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1 0-5.44c.28 0 .55.04.8.12V10.4a5.7 5.7 0 0 0-.8-.06 5.74 5.74 0 0 0 0 11.48 5.74 5.74 0 0 0 5.74-5.74V8.9a7.6 7.6 0 0 0 4.45 1.43V7.31a4.85 4.85 0 0 1-2.99-1.49z"/></svg>
+      </a>
+      <a class="nav-cta" href="tel:+60129398963">📞 012-939 8963</a>
+    </div>
   </div>
 </header>
 
@@ -472,7 +443,6 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Kontraktor Binaan — Kota Bharu, Kelantan</div>
-    <a class="cred-badge" href="#pengiktirafan">🏅 <b>Kontraktor Berdaftar JKR</b> — Sijil Penghargaan Kontraktor Cemerlang</a>
     <h1>Dari lakaran pelan, <span>kepada kunci</span> rumah anda.</h1>
     <p>Tengku Azrin Construction merancang, membina dan menyiapkan rumah banglo mengikut pelan yang diluluskan — bukan agakan di tapak. Satu kontraktor, dari reka bentuk sampai serah kunci.</p>
     <div class="btn-row">
@@ -506,30 +476,8 @@
         </div>
       </div>
       <div class="about-photo">
-        <img src="showcase-render-side.jpg" alt="Render rumah banglo Tengku Azrin Construction">
+        <img src="assets/render-corner2.jpg" alt="Render rumah banglo Tengku Azrin Construction">
         <div class="tag">Reka bentuk dihasilkan sebelum kerja tapak bermula — apa yang dilihat, itu yang dibina.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OWNER SPOTLIGHT -->
-<section class="owner-spotlight" id="pemilik">
-  <div class="wrap">
-    <div class="owner-grid">
-      <div class="owner-card-wrap">
-        <div class="owner-card">
-          <img src="owner-photo-full.jpg" alt="Tengku Azrin, Pemilik Tengku Azrin Construction">
-        </div>
-      </div>
-      <div class="owner-copy">
-        <div class="eyebrow-light">Pemilik & Pengasas</div>
-        <h2>Tengku Azrin<br>Pakar Kerangka Struktur Berbumbung.</h2>
-        <p>Mengetuai setiap projek secara langsung — dari lukisan pelan sehingga kerja struktur bumbung disiapkan di tapak. Pengalaman tangan pertama, bukan sekadar pengurusan dari jauh.</p>
-        <div class="owner-tag">
-          <span class="dim-tick"></span>
-          Tengku Azrin Construction — Kota Bharu
-        </div>
       </div>
     </div>
   </div>
@@ -573,7 +521,7 @@
     </div>
     <div class="process-grid">
       <div class="step">
-        <div class="step-photo"><img src="cad-elevation.jpg" alt="Lukisan pelan dan elevation"></div>
+        <div class="step-photo"><img src="assets/cad-elevation.jpg" alt="Lukisan pelan dan elevation"></div>
         <div class="step-body">
           <span class="step-num">01 — REKA & PELAN</span>
           <h4>Pelan & Elevation</h4>
@@ -581,7 +529,7 @@
         </div>
       </div>
       <div class="step">
-        <div class="step-photo"><img src="site-brick.jpg" alt="Kerja struktur dan bata di tapak"></div>
+        <div class="step-photo"><img src="assets/site-brick.jpg" alt="Kerja struktur dan bata di tapak"></div>
         <div class="step-body">
           <span class="step-num">02 — ASAS & STRUKTUR</span>
           <h4>Struktur & Dinding</h4>
@@ -589,7 +537,7 @@
         </div>
       </div>
       <div class="step">
-        <div class="step-photo"><img src="site-roof.jpg" alt="Kerja bumbung di tapak"></div>
+        <div class="step-photo"><img src="assets/site-roof.jpg" alt="Kerja bumbung di tapak"></div>
         <div class="step-body">
           <span class="step-num">03 — BUMBUNG & LUARAN</span>
           <h4>Bumbung & Siling</h4>
@@ -597,7 +545,7 @@
         </div>
       </div>
       <div class="step">
-        <div class="step-photo"><img src="exterior-finished2.jpg" alt="Rumah siap dibina"></div>
+        <div class="step-photo"><img src="assets/exterior-finished2.jpg" alt="Rumah siap dibina"></div>
         <div class="step-body">
           <span class="step-num">04 — SIAP & SERAH</span>
           <h4>Siap & Serah Kunci</h4>
@@ -612,14 +560,26 @@
 <section class="video-section">
   <div class="wrap">
     <div class="section-head">
+      <div class="eyebrow-light">Video Promo</div>
+      <h2>Tengok cerita penuh TAC.</h2>
+      <p>Video promo rasmi Tengku Azrin Construction — kenali kerja kami dengan lebih dekat.</p>
+    </div>
+    <div class="promo-embed">
+      <iframe src="https://drive.google.com/file/d/1ILhCw7G5SMD2OnsPEfe-t9_Cc5VsNQhK/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <a class="drive-fallback" href="https://drive.google.com/file/d/1ILhCw7G5SMD2OnsPEfe-t9_Cc5VsNQhK/view?usp=drivesdk" target="_blank" rel="noopener">
+      Tak boleh main video? Buka di Google Drive →
+    </a>
+
+    <div class="section-head" style="margin-top:64px;">
       <div class="eyebrow-light">Tapak Sebenar</div>
       <h2>Bukan render — ini tapak sebenar.</h2>
       <p>Video sebenar semasa kerja bumbung dijalankan di tapak. Tiada editan berlebihan, apa yang berlaku, itu yang dipaparkan.</p>
     </div>
     <div class="video-grid">
       <div class="video-card">
-        <video controls autoplay muted loop preload="auto" poster="video-tapak-1-poster.jpg" playsinline>
-          <source src="video-tapak-1.mp4" type="video/mp4">
+        <video controls preload="metadata" poster="assets/video-tapak-1-poster.jpg" playsinline>
+          <source src="assets/video-tapak-1.mp4" type="video/mp4">
           Pelayar anda tidak menyokong paparan video.
         </video>
         <div class="video-caption">
@@ -628,8 +588,8 @@
         </div>
       </div>
       <div class="video-card">
-        <video controls autoplay muted loop preload="auto" poster="video-tapak-2-poster.jpg" playsinline>
-          <source src="video-tapak-2.mp4" type="video/mp4">
+        <video controls preload="metadata" poster="assets/video-tapak-2-poster.jpg" playsinline>
+          <source src="assets/video-tapak-2.mp4" type="video/mp4">
           Pelayar anda tidak menyokong paparan video.
         </video>
         <div class="video-caption">
@@ -646,8 +606,8 @@
   <div class="wrap">
     <div class="quality-grid">
       <div class="quality-photo">
-        <img src="interior-spacious.jpg" alt="Ruang dalaman rumah siap dibina">
-        <img src="interior-ceiling.jpg" alt="Kerja siling dalaman">
+        <img src="assets/interior-spacious.jpg" alt="Ruang dalaman rumah siap dibina">
+        <img src="assets/interior-ceiling.jpg" alt="Kerja siling dalaman">
       </div>
       <div class="fp-side">
         <div class="eyebrow-light" style="color:var(--brick);">Kualiti Kerja</div>
@@ -727,66 +687,13 @@
       <p>Sebahagian daripada render konsep dan rumah yang telah siap dibina.</p>
     </div>
     <div class="gallery-grid">
-      <figure class="g-tall"><img src="showcase-render-front.jpg" alt="Render hadapan rumah banglo"><figcaption>Render 3D — Hadapan</figcaption></figure>
-      <figure><img src="exterior-finished1.jpg" alt="Rumah siap dibina - hadapan"><figcaption>Siap Dibina</figcaption></figure>
-      <figure><img src="exterior-finished2.jpg" alt="Rumah siap dibina - sudut"><figcaption>Siap Dibina — Sudut</figcaption></figure>
-      <figure class="g-tall"><img src="showcase-build-front2.jpg" alt="Rumah siap dibina - hadapan penuh"><figcaption>Siap Dibina — Hadapan Penuh</figcaption></figure>
-      <figure><img src="showcase-build-corner.jpg" alt="Dalam pembinaan - sudut"><figcaption>Dalam Pembinaan — Sudut</figcaption></figure>
-      <figure><img src="interior-sliding.jpg" alt="Ruang dalaman dengan pintu gelangsar"><figcaption>Dalaman — Siap</figcaption></figure>
-      <figure class="g-wide"><img src="showcase-build-porch1.jpg" alt="Dalam pembinaan - beranda"><figcaption>Dalam Pembinaan — Beranda</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- PROJEK TERKINI: PELAN KE REALITI -->
-<section class="gallery" id="pelan-ke-realiti">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow-light">Projek Terkini</div>
-      <h2>Dari pelan, kepada rumah sebenar.</h2>
-      <p>Reka bentuk 3D dan progress tapak sebenar bagi projek terbaru kami — bukti setiap butiran dalam pelan turut wujud di tapak.</p>
-    </div>
-
-    <div class="cred-tag">PROJEK 01</div>
-    <h3 style="color:var(--brick); font-size:1.05rem; margin-bottom:16px;">Render 3D</h3>
-    <div class="gallery-grid" style="margin-bottom:40px;">
-      <figure class="g-wide"><img src="showcase-render-front.jpg" alt="Render 3D hadapan"><figcaption>Render 3D — Hadapan</figcaption></figure>
-      <figure><img src="showcase-render-corner1.jpg" alt="Render 3D sudut hadapan"><figcaption>Render 3D — Sudut Hadapan</figcaption></figure>
-      <figure><img src="showcase-render-corner2.jpg" alt="Render 3D sudut belakang"><figcaption>Render 3D — Sudut Belakang</figcaption></figure>
-      <figure><img src="showcase-render-side.jpg" alt="Render 3D sisi"><figcaption>Render 3D — Sisi</figcaption></figure>
-    </div>
-
-    <h3 style="color:var(--brick); font-size:1.05rem; margin-bottom:16px;">Hasil Sebenar Di Tapak</h3>
-    <div class="gallery-grid" style="margin-bottom:56px;">
-      <figure class="g-tall"><img src="showcase-build-front.jpg" alt="Rumah siap dibina - hadapan"><figcaption>Siap Dibina — Hadapan</figcaption></figure>
-      <figure><img src="showcase-build-yard.jpg" alt="Dalam pembinaan - laman sisi"><figcaption>Dalam Pembinaan — Laman Sisi</figcaption></figure>
-      <figure><img src="showcase-build-corner.jpg" alt="Dalam pembinaan - sudut"><figcaption>Dalam Pembinaan — Sudut</figcaption></figure>
-      <figure class="g-tall"><img src="showcase-build-porch1.jpg" alt="Dalam pembinaan - beranda"><figcaption>Dalam Pembinaan — Beranda</figcaption></figure>
-      <figure><img src="showcase-build-porch2.jpg" alt="Rumah siap dibina - beranda hadapan"><figcaption>Siap Dibina — Beranda Hadapan</figcaption></figure>
-      <figure><img src="showcase-build-front2.jpg" alt="Rumah siap dibina - hadapan penuh"><figcaption>Siap Dibina — Hadapan Penuh</figcaption></figure>
-    </div>
-
-    <div class="cred-tag">PROJEK 02</div>
-    <h3 style="color:var(--brick); font-size:1.05rem; margin-bottom:16px;">Render 3D</h3>
-    <div class="gallery-grid" style="margin-bottom:40px;">
-      <figure class="g-tall"><img src="render2-modernbox-front.jpg" alt="Render 3D hadapan - pilihan A"><figcaption>Render 3D — Hadapan (Pilihan A)</figcaption></figure>
-      <figure><img src="render2-modernbox-corner1.jpg" alt="Render 3D sudut - pilihan A"><figcaption>Render 3D — Sudut (Pilihan A)</figcaption></figure>
-      <figure><img src="render2-modernbox-corner2.jpg" alt="Render 3D sudut belakang - pilihan A"><figcaption>Render 3D — Sudut Belakang (Pilihan A)</figcaption></figure>
-      <figure class="g-tall"><img src="render2-gable-front.jpg" alt="Render 3D hadapan - pilihan B"><figcaption>Render 3D — Hadapan (Pilihan B)</figcaption></figure>
-      <figure><img src="render2-gable-aerial.jpg" alt="Render 3D pandangan udara"><figcaption>Render 3D — Pandangan Udara</figcaption></figure>
-      <figure><img src="render2-gable-aerial-plan.jpg" alt="Render 3D bersama pelan lantai"><figcaption>Render 3D — Bersama Pelan Lantai</figcaption></figure>
-      <figure class="g-wide"><img src="render2-gable-corner.jpg" alt="Render 3D sudut - pilihan B"><figcaption>Render 3D — Sudut (Pilihan B)</figcaption></figure>
-    </div>
-
-    <h3 style="color:var(--brick); font-size:1.05rem; margin-bottom:16px;">Hasil Sebenar Di Tapak</h3>
-    <div class="gallery-grid">
-      <figure class="g-tall"><img src="build2-gable-front1.jpg" alt="Rumah siap dibina - hadapan"><figcaption>Siap Dibina — Hadapan</figcaption></figure>
-      <figure><img src="build2-gable-side1.jpg" alt="Dalam pembinaan - sudut"><figcaption>Dalam Pembinaan — Sudut</figcaption></figure>
-      <figure><img src="build2-gable-porch.jpg" alt="Dalam pembinaan - beranda"><figcaption>Dalam Pembinaan — Beranda</figcaption></figure>
-      <figure class="g-tall"><img src="build2-gable-front2.jpg" alt="Rumah siap dibina - hadapan penuh"><figcaption>Siap Dibina — Hadapan Penuh</figcaption></figure>
-      <figure><img src="build2-gable-side2.jpg" alt="Dalam pembinaan - sudut sisi"><figcaption>Dalam Pembinaan — Sudut Sisi</figcaption></figure>
-      <figure><img src="build2-gable-street.jpg" alt="Tapak - kerja akhir"><figcaption>Tapak — Kerja Akhir</figcaption></figure>
-      <figure class="g-wide"><img src="build2-gable-gate.jpg" alt="Pagar dan laluan masuk"><figcaption>Pagar & Laluan Masuk</figcaption></figure>
+      <figure class="g-tall"><img src="assets/render-front.jpg" alt="Render hadapan rumah banglo"><figcaption>Render 3D — Hadapan</figcaption></figure>
+      <figure><img src="assets/exterior-finished1.jpg" alt="Rumah siap dibina - hadapan"><figcaption>Siap Dibina</figcaption></figure>
+      <figure><img src="assets/exterior-finished2.jpg" alt="Rumah siap dibina - sudut"><figcaption>Siap Dibina — Sudut</figcaption></figure>
+      <figure class="g-tall"><img src="assets/render-dusk.jpg" alt="Render rumah waktu senja"><figcaption>Render 3D — Senja</figcaption></figure>
+      <figure><img src="assets/render-aerial.jpg" alt="Render udara skim perumahan"><figcaption>Render 3D — Skim</figcaption></figure>
+      <figure><img src="assets/interior-sliding.jpg" alt="Ruang dalaman dengan pintu gelangsar"><figcaption>Dalaman — Siap</figcaption></figure>
+      <figure class="g-wide"><img src="assets/render-street.jpg" alt="Render jalan skim perumahan"><figcaption>Render 3D — Jalan Utama Skim</figcaption></figure>
     </div>
   </div>
 </section>
@@ -794,7 +701,10 @@
 <!-- FLOORPLAN -->
 <section class="floorplan" id="pelan">
   <div class="wrap">
-    <div class="fp-grid fp-grid-solo">
+    <div class="fp-grid">
+      <div class="fp-photo">
+        <img src="assets/floorplan-1.jpg" alt="Pelan lantai rumah banglo Tengku Azrin Construction">
+      </div>
       <div class="fp-side">
         <div class="eyebrow-light" style="color:var(--brick);">Pelan Lantai</div>
         <h2 style="margin-top:18px; color:var(--paper);">Susun atur unit tipikal.</h2>
@@ -816,51 +726,6 @@
   </div>
 </section>
 
-<!-- PENGIKTIRAFAN -->
-<section class="pengiktirafan" id="pengiktirafan">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow-light" style="color:var(--brick);">Pengiktirafan</div>
-      <h2 style="margin-top:18px; color:var(--paper);">Kontraktor berdaftar, diiktiraf kerajaan.</h2>
-      <p style="color:var(--steel);">Tengku Azrin Construction ialah kontraktor berdaftar yang telah menyiapkan projek kerajaan bersama Jabatan Kerja Raya (JKR) Negeri Terengganu, disahkan dengan Sijil Penghargaan Kontraktor Cemerlang.</p>
-      <div class="cred-logos">
-        <div class="cred-logo-badge"><img src="logo-jata-negara.png" alt="Kerajaan Malaysia"></div>
-        <div class="cred-logo-badge"><img src="logo-cidb.png" alt="CIDB Malaysia"></div>
-      </div>
-    </div>
-    <div class="cred-grid">
-      <div class="cred-photo">
-        <img src="sijil-kontraktor-cemerlang.jpg" alt="Sijil Penghargaan Kontraktor Cemerlang daripada JKR Negeri Terengganu">
-      </div>
-      <div class="cred-copy">
-        <h3>Sijil Penghargaan Kontraktor Cemerlang</h3>
-        <p>Dianugerahkan oleh Jabatan Kerja Raya (JKR) Negeri Terengganu atas kejayaan menyiapkan projek kerajaan dengan mutu kerja yang cemerlang.</p>
-        <ul class="cred-list">
-          <li><b>Projek:</b> Kerja-kerja Senggara dan Baikpulih Fasiliti di Sekolah Kebangsaan Kg. Shukor, Dungun, Terengganu</li>
-          <li><b>Prestasi:</b> Disiapkan 152 hari lebih awal daripada tempoh kontrak yang ditetapkan</li>
-          <li><b>No. Pendaftaran Kontraktor:</b> KT0208117-X</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 class="cred-subhead">Gambar Tapak — Projek Sekolah Kebangsaan Kg. Shukor</h3>
-    <div class="gallery-grid cred-gallery">
-      <figure><img src="projek-sekolah-pintu-masuk.jpg" alt="Pintu masuk utama sekolah"><figcaption>Pintu Masuk Utama</figcaption></figure>
-      <figure><img src="projek-sekolah-papan-tanda.jpg" alt="Papan tanda sekolah"><figcaption>Papan Tanda Sekolah</figcaption></figure>
-      <figure><img src="projek-sekolah-blok-b.jpg" alt="Blok bangunan sekolah"><figcaption>Blok Bangunan</figcaption></figure>
-      <figure><img src="projek-sekolah-koridor.jpg" alt="Koridor kelas sekolah"><figcaption>Koridor Kelas</figcaption></figure>
-      <figure><img src="projek-sekolah-dewan.jpg" alt="Dewan dan kantin sekolah"><figcaption>Dewan / Kantin</figcaption></figure>
-      <figure><img src="projek-sekolah-kaunter.jpg" alt="Kaunter kantin sekolah"><figcaption>Kaunter Kantin</figcaption></figure>
-      <figure><img src="projek-sekolah-dapur1.jpg" alt="Dapur sekolah"><figcaption>Dapur</figcaption></figure>
-      <figure><img src="projek-sekolah-dapur2.jpg" alt="Ruang dapur sekolah"><figcaption>Ruang Dapur</figcaption></figure>
-      <figure><img src="projek-sekolah-blok-c.jpg" alt="Blok bangunan sekolah - luar"><figcaption>Blok Bangunan — Luar</figcaption></figure>
-      <figure><img src="projek-sekolah-sisi.jpg" alt="Sisi bangunan sekolah"><figcaption>Sisi Bangunan</figcaption></figure>
-      <figure><img src="projek-sekolah-asrama.jpg" alt="Blok dua tingkat sekolah"><figcaption>Blok Dua Tingkat</figcaption></figure>
-      <figure><img src="projek-sekolah-tandas.jpg" alt="Blok tandas sekolah"><figcaption>Blok Tandas</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <!-- CTA BAND -->
 <section class="cta-band">
   <div class="wrap">
@@ -874,19 +739,60 @@
   </div>
 </section>
 
+<!-- IKUTI KAMI -->
+<section class="social-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-light">Ikuti Kami</div>
+      <h2>Ikuti perjalanan projek kami.</h2>
+      <p>Update terkini, video tapak dan projek siap — semua ada di Facebook dan TikTok rasmi TAC.</p>
+    </div>
+    <div class="social-grid">
+      <a class="social-card" href="https://www.facebook.com/share/1NS5e6WVr5/" target="_blank" rel="noopener">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M13.5 21v-8.2h2.75l.4-3.2h-3.15V7.4c0-.93.26-1.56 1.6-1.56h1.7V2.98C16.5 2.94 15.4 2.85 14.14 2.85c-2.6 0-4.38 1.59-4.38 4.5v2.25H7v3.2h2.76V21h3.74z"/></svg>
+        </div>
+        <div class="social-card-body">
+          <h4>Facebook</h4>
+          <p>Gambar, video dan update projek terkini TAC.</p>
+        </div>
+        <span class="social-card-cta">Like Page →</span>
+      </a>
+      <a class="social-card" href="https://www.tiktok.com/@tengkuazrinmaju?_r=1&_t=ZS-97m1skmtxyO" target="_blank" rel="noopener">
+        <div class="social-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M16.6 5.82c-.9-.78-1.45-1.9-1.45-3.15h-3.02v13.36c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1 0-5.44c.28 0 .55.04.8.12V10.4a5.7 5.7 0 0 0-.8-.06 5.74 5.74 0 0 0 0 11.48 5.74 5.74 0 0 0 5.74-5.74V8.9a7.6 7.6 0 0 0 4.45 1.43V7.31a4.85 4.85 0 0 1-2.99-1.49z"/></svg>
+        </div>
+        <div class="social-card-body">
+          <h4>TikTok</h4>
+          <p>Klip pendek tapak, proses bina dan tip rumah.</p>
+        </div>
+        <span class="social-card-cta">Follow @tengkuazrinmaju →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <img src="logo-mark-tight.jpg" alt="Logo TAC">
+          <img src="assets/logo-mark-tight.jpg" alt="Logo TAC">
           <div>
             <b>TENGKU AZRIN CONSTRUCTION</b>
             <small>KONTRAKTOR BINAAN</small>
           </div>
         </div>
         <p>Reka bentuk, bina dan serah rumah banglo di Kota Bharu, Kelantan — satu kontraktor dari lakaran pelan sehingga kunci rumah.</p>
+        <div class="footer-social">
+          <a class="social-icon" href="https://www.facebook.com/share/1NS5e6WVr5/" target="_blank" rel="noopener" aria-label="Facebook TAC">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M13.5 21v-8.2h2.75l.4-3.2h-3.15V7.4c0-.93.26-1.56 1.6-1.56h1.7V2.98C16.5 2.94 15.4 2.85 14.14 2.85c-2.6 0-4.38 1.59-4.38 4.5v2.25H7v3.2h2.76V21h3.74z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.tiktok.com/@tengkuazrinmaju?_r=1&_t=ZS-97m1skmtxyO" target="_blank" rel="noopener" aria-label="TikTok TAC">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M16.6 5.82c-.9-.78-1.45-1.9-1.45-3.15h-3.02v13.36c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1 0-5.44c.28 0 .55.04.8.12V10.4a5.7 5.7 0 0 0-.8-.06 5.74 5.74 0 0 0 0 11.48 5.74 5.74 0 0 0 5.74-5.74V8.9a7.6 7.6 0 0 0 4.45 1.43V7.31a4.85 4.85 0 0 1-2.99-1.49z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h5>Pautan</h5>
@@ -896,7 +802,6 @@
           <li><a href="#perkhidmatan">Perkhidmatan</a></li>
           <li><a href="#projek">Projek</a></li>
           <li><a href="#pelan">Pelan Lantai</a></li>
-          <li><a href="#pengiktirafan">Pengiktirafan</a></li>
         </ul>
       </div>
       <div>
