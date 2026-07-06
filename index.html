@@ -247,6 +247,20 @@
     font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.08em;
     color:var(--brick); text-transform:uppercase;
   }
+  .owner-credential{
+    display:flex; align-items:center; gap:14px;
+    margin-top:22px; padding-top:22px;
+    border-top:1px solid rgba(199,204,209,0.14);
+  }
+  .owner-credential-badge{
+    width:52px; height:52px; border-radius:50%;
+    background:#fff; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .owner-credential-badge img{width:100%; height:100%; object-fit:contain; padding:4px;}
+  .owner-credential-text b{display:block; color:var(--paper); font-size:14px; font-weight:600;}
+  .owner-credential-text span{display:block; color:var(--steel); font-size:12.5px; margin-top:2px;}
 
   /* ---------- Stats strip ---------- */
   .stats{background:var(--ink); color:var(--paper);}
@@ -589,6 +603,13 @@
         <div class="owner-tag">
           <span class="dim-tick"></span>
           Tengku Azrin Construction — Kota Bharu
+        </div>
+        <div class="owner-credential">
+          <div class="owner-credential-badge"><img src="logo-usm.jpg" alt="Universiti Sains Malaysia"></div>
+          <div class="owner-credential-text">
+            <b>Sarjana (Housing, Building and Planning)</b>
+            <span>Universiti Sains Malaysia — Graduasi 2006</span>
+          </div>
         </div>
       </div>
     </div>
